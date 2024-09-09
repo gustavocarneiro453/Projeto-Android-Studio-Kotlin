@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            // Aqui estamos utilizando o tema padrão do Material 3
+            
             Surface(modifier = Modifier.fillMaxSize()) {
                 DiceGameScreen()
             }
@@ -42,7 +42,7 @@ fun DiceGameScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        // Mostrando os dois dados
+        
         Row(
             horizontalArrangement = Arrangement.Center,
             modifier = Modifier.fillMaxWidth()
@@ -54,12 +54,12 @@ fun DiceGameScreen() {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Mensagem de ganhou ou perdeu
+        
         Text(text = message, style = MaterialTheme.typography.bodyLarge)
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Botão de jogar
+        
         Button(onClick = {
             dice1 = Random.nextInt(1, 7)
             dice2 = Random.nextInt(1, 7)
@@ -78,7 +78,7 @@ fun DiceGameScreen() {
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // Exibição do placar
+        
         ScoreDisplay(totalGames = totalGames, totalWins = totalWins)
     }
 }
@@ -112,6 +112,6 @@ fun ScoreDisplay(totalGames: Int, totalWins: Int) {
 @Preview(showBackground = true)
 @Composable
 fun DiceGameScreenPreview() {
-    // Preview da tela do jogo
+    
     DiceGameScreen()
 }
